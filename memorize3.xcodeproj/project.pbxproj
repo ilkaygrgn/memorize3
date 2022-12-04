@@ -11,6 +11,10 @@
 		7509017F2937E1FB003D30D8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7509017E2937E1FB003D30D8 /* ContentView.swift */; };
 		750901812937E1FC003D30D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 750901802937E1FC003D30D8 /* Assets.xcassets */; };
 		750901842937E1FC003D30D8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 750901832937E1FC003D30D8 /* Preview Assets.xcassets */; };
+		7509018B2937E2CA003D30D8 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7509018A2937E2CA003D30D8 /* Test.swift */; };
+		757724CD2939401B006E52B2 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 757724CC2939401B006E52B2 /* Montserrat-SemiBold.ttf */; };
+		757724CF29394063006E52B2 /* Kristi-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 757724CE29394063006E52B2 /* Kristi-Regular.ttf */; };
+		757724D229394A88006E52B2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757724D129394A88006E52B2 /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,11 @@
 		7509017E2937E1FB003D30D8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		750901802937E1FC003D30D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		750901832937E1FC003D30D8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		7509018A2937E2CA003D30D8 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		757724CC2939401B006E52B2 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		757724CE29394063006E52B2 /* Kristi-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kristi-Regular.ttf"; sourceTree = "<group>"; };
+		757724D029394220006E52B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		757724D129394A88006E52B2 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +44,7 @@
 		750901702937E1FB003D30D8 = {
 			isa = PBXGroup;
 			children = (
+				757724CB29393FFC006E52B2 /* Fonts */,
 				7509017B2937E1FB003D30D8 /* memorize3 */,
 				7509017A2937E1FB003D30D8 /* Products */,
 			);
@@ -51,8 +61,11 @@
 		7509017B2937E1FB003D30D8 /* memorize3 */ = {
 			isa = PBXGroup;
 			children = (
+				757724D029394220006E52B2 /* Info.plist */,
 				7509017C2937E1FB003D30D8 /* memorize3App.swift */,
 				7509017E2937E1FB003D30D8 /* ContentView.swift */,
+				7509018A2937E2CA003D30D8 /* Test.swift */,
+				757724D129394A88006E52B2 /* MainView.swift */,
 				750901802937E1FC003D30D8 /* Assets.xcassets */,
 				750901822937E1FC003D30D8 /* Preview Content */,
 			);
@@ -65,6 +78,15 @@
 				750901832937E1FC003D30D8 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		757724CB29393FFC006E52B2 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				757724CC2939401B006E52B2 /* Montserrat-SemiBold.ttf */,
+				757724CE29394063006E52B2 /* Kristi-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,8 +147,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				757724CD2939401B006E52B2 /* Montserrat-SemiBold.ttf in Resources */,
 				750901842937E1FC003D30D8 /* Preview Assets.xcassets in Resources */,
 				750901812937E1FC003D30D8 /* Assets.xcassets in Resources */,
+				757724CF29394063006E52B2 /* Kristi-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +162,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7509017F2937E1FB003D30D8 /* ContentView.swift in Sources */,
+				757724D229394A88006E52B2 /* MainView.swift in Sources */,
 				7509017D2937E1FB003D30D8 /* memorize3App.swift in Sources */,
+				7509018B2937E2CA003D30D8 /* Test.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +296,7 @@
 				DEVELOPMENT_TEAM = VNM9C9XFKT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = memorize3/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -299,6 +326,7 @@
 				DEVELOPMENT_TEAM = VNM9C9XFKT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = memorize3/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
