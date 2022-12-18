@@ -8,9 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.managedObjectContext) private var viewContext
+    @StateObject var data = DataController()
+    
     var body: some View {
-        Test()
+        ZStack {
+            //Test()
+            //MainView2()
+            ListWordsView()
+        }
+        
+        
     }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
