@@ -58,9 +58,6 @@ struct MainView2: View {
                 Spacer()
             }
         }
-        .onAppear(
-            perform: wordGetter.getWord
-        )
     }
 }
 
