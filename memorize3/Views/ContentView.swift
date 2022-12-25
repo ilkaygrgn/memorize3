@@ -8,14 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var vm : CoreDataViewModel
+    
     @Environment(\.managedObjectContext) private var viewContext
     @StateObject var data = DataController()
     
+    
+    
     var body: some View {
         ZStack {
-            //Test()
-            //MainView2()
-            ListWordsView()
+            
+            //ListWordsView()
+            WorkoutView(currentWord: vm.getNewWord())
+            //AppTabBarView()
         }
         
         

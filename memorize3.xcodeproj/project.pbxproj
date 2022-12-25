@@ -16,6 +16,14 @@
 		750901812937E1FC003D30D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 750901802937E1FC003D30D8 /* Assets.xcassets */; };
 		750901842937E1FC003D30D8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 750901832937E1FC003D30D8 /* Preview Assets.xcassets */; };
 		7509018B2937E2CA003D30D8 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7509018A2937E2CA003D30D8 /* Test.swift */; };
+		7536668C29570FF400573E83 /* WorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7536668B29570FF400573E83 /* WorkoutView.swift */; };
+		7539967E2953995300DF483A /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7539967D2953995300DF483A /* SearchBarView.swift */; };
+		7550E75C2951C83200970138 /* CustomTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7550E75B2951C83200970138 /* CustomTabView.swift */; };
+		75746EE429534A900064FE2B /* AppTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75746EE329534A900064FE2B /* AppTabBarView.swift */; };
+		75746EE629534AAB0064FE2B /* CustomTabBarContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75746EE529534AAB0064FE2B /* CustomTabBarContainerView.swift */; };
+		75746EE829534ABF0064FE2B /* CustomTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75746EE729534ABF0064FE2B /* CustomTabBarView.swift */; };
+		75746EEA29534ACB0064FE2B /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75746EE929534ACB0064FE2B /* TabBarItem.swift */; };
+		75746EEC29534ADD0064FE2B /* TabBarItamsPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75746EEB29534ADD0064FE2B /* TabBarItamsPreferenceKey.swift */; };
 		757724CD2939401B006E52B2 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 757724CC2939401B006E52B2 /* Montserrat-SemiBold.ttf */; };
 		757724CF29394063006E52B2 /* Kristi-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 757724CE29394063006E52B2 /* Kristi-Regular.ttf */; };
 		757724D229394A88006E52B2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757724D129394A88006E52B2 /* MainView.swift */; };
@@ -43,6 +51,14 @@
 		750901802937E1FC003D30D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		750901832937E1FC003D30D8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7509018A2937E2CA003D30D8 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		7536668B29570FF400573E83 /* WorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutView.swift; sourceTree = "<group>"; };
+		7539967D2953995300DF483A /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		7550E75B2951C83200970138 /* CustomTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabView.swift; sourceTree = "<group>"; };
+		75746EE329534A900064FE2B /* AppTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabBarView.swift; sourceTree = "<group>"; };
+		75746EE529534AAB0064FE2B /* CustomTabBarContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarContainerView.swift; sourceTree = "<group>"; };
+		75746EE729534ABF0064FE2B /* CustomTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarView.swift; sourceTree = "<group>"; };
+		75746EE929534ACB0064FE2B /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
+		75746EEB29534ADD0064FE2B /* TabBarItamsPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItamsPreferenceKey.swift; sourceTree = "<group>"; };
 		757724CC2939401B006E52B2 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
 		757724CE29394063006E52B2 /* Kristi-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kristi-Regular.ttf"; sourceTree = "<group>"; };
 		757724D029394220006E52B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -92,18 +108,17 @@
 		7509017B2937E1FB003D30D8 /* memorize3 */ = {
 			isa = PBXGroup;
 			children = (
+				75746EE229534A4A0064FE2B /* CustomTabBar */,
 				75A902AE294F305400B995B3 /* toDelete */,
+				7550E75A2951C48500970138 /* Helpers */,
 				75A902AF294F306D00B995B3 /* Data */,
 				757724CB29393FFC006E52B2 /* Fonts */,
 				75A902B0294F308000B995B3 /* ViewModel */,
 				75A902B1294F30C100B995B3 /* Views */,
 				757724D029394220006E52B2 /* Info.plist */,
 				7509017C2937E1FB003D30D8 /* memorize3App.swift */,
-				7509017E2937E1FB003D30D8 /* ContentView.swift */,
-				7509018A2937E2CA003D30D8 /* Test.swift */,
 				757724D129394A88006E52B2 /* MainView.swift */,
 				7503D3DD29466F8100FFB37C /* MainView2.swift */,
-				7503D3E229467B9F00FFB37C /* WordScraper.swift */,
 				75B0EE22294CB6E200FA85F6 /* Main.xcdatamodeld */,
 				750901802937E1FC003D30D8 /* Assets.xcassets */,
 				750901822937E1FC003D30D8 /* Preview Content */,
@@ -119,6 +134,27 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		7550E75A2951C48500970138 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7503D3E229467B9F00FFB37C /* WordScraper.swift */,
+				758A161B29509CFC00A6AB3E /* Word-CoreDataHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		75746EE229534A4A0064FE2B /* CustomTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				75746EE329534A900064FE2B /* AppTabBarView.swift */,
+				75746EE529534AAB0064FE2B /* CustomTabBarContainerView.swift */,
+				75746EE729534ABF0064FE2B /* CustomTabBarView.swift */,
+				75746EE929534ACB0064FE2B /* TabBarItem.swift */,
+				75746EEB29534ADD0064FE2B /* TabBarItamsPreferenceKey.swift */,
+			);
+			path = CustomTabBar;
+			sourceTree = "<group>";
+		};
 		757724CB29393FFC006E52B2 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +167,9 @@
 		75A902AE294F305400B995B3 /* toDelete */ = {
 			isa = PBXGroup;
 			children = (
+				7550E75B2951C83200970138 /* CustomTabView.swift */,
+				7509018A2937E2CA003D30D8 /* Test.swift */,
+				7503D3DB29466D0600FFB37C /* BackgroundView.swift */,
 				757B45D2294DD2FC002FE839 /* PersistenceController.swift */,
 				75B0EE27294CB8AF00FA85F6 /* DataController.swift */,
 			);
@@ -158,11 +197,12 @@
 		75A902B1294F30C100B995B3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7509017E2937E1FB003D30D8 /* ContentView.swift */,
 				75A6848429504E9600251A56 /* WordDetailView.swift */,
-				758A161B29509CFC00A6AB3E /* Word-CoreDataHelper.swift */,
 				75A902B2294F38EF00B995B3 /* HomeView.swift */,
 				757B45D4294DD552002FE839 /* ListWordsView.swift */,
-				7503D3DB29466D0600FFB37C /* BackgroundView.swift */,
+				7536668B29570FF400573E83 /* WorkoutView.swift */,
+				7539967D2953995300DF483A /* SearchBarView.swift */,
 				75A902B4294F392C00B995B3 /* BackgroundView2.swift */,
 			);
 			path = Views;
@@ -248,9 +288,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75746EE829534ABF0064FE2B /* CustomTabBarView.swift in Sources */,
 				7503D3DC29466D0600FFB37C /* BackgroundView.swift in Sources */,
 				75A902AD294F2B4000B995B3 /* CoreDataViewModel.swift in Sources */,
 				75A902B3294F38EF00B995B3 /* HomeView.swift in Sources */,
+				7539967E2953995300DF483A /* SearchBarView.swift in Sources */,
+				75746EEA29534ACB0064FE2B /* TabBarItem.swift in Sources */,
 				7509017F2937E1FB003D30D8 /* ContentView.swift in Sources */,
 				7503D3E329467B9F00FFB37C /* WordScraper.swift in Sources */,
 				75A902B5294F392C00B995B3 /* BackgroundView2.swift in Sources */,
@@ -259,12 +302,17 @@
 				757724D229394A88006E52B2 /* MainView.swift in Sources */,
 				75A6848529504E9600251A56 /* WordDetailView.swift in Sources */,
 				7509017D2937E1FB003D30D8 /* memorize3App.swift in Sources */,
+				7536668C29570FF400573E83 /* WorkoutView.swift in Sources */,
 				757B45D5294DD552002FE839 /* ListWordsView.swift in Sources */,
 				75B0EE24294CB6E200FA85F6 /* Main.xcdatamodeld in Sources */,
 				7509018B2937E2CA003D30D8 /* Test.swift in Sources */,
 				757B45D3294DD2FC002FE839 /* PersistenceController.swift in Sources */,
+				75746EE429534A900064FE2B /* AppTabBarView.swift in Sources */,
+				7550E75C2951C83200970138 /* CustomTabView.swift in Sources */,
 				758A161C29509CFC00A6AB3E /* Word-CoreDataHelper.swift in Sources */,
 				75A902B9294F552300B995B3 /* PreviewModel.swift in Sources */,
+				75746EE629534AAB0064FE2B /* CustomTabBarContainerView.swift in Sources */,
+				75746EEC29534ADD0064FE2B /* TabBarItamsPreferenceKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

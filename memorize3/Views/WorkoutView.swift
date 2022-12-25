@@ -1,20 +1,20 @@
 //
-//  WordDetailView.swift
+//  WorkoutView.swift
 //  memorize3
 //
-//  Created by ilkay girgin on 19.12.2022.
+//  Created by ilkay girgin on 24.12.2022.
 //
 
 import SwiftUI
 
-struct WordDetailView: View {
+struct WorkoutView: View {
     
     @EnvironmentObject var data: CoreDataViewModel
     @Environment(\.presentationMode) var presentationMode
     
     @State var isDeleted = false
     
-    let currentWord: Word
+    var currentWord: Word
     
     @State var name: String
     @State var translation: String
@@ -26,13 +26,15 @@ struct WordDetailView: View {
     init(currentWord: Word){
         self.currentWord = currentWord
         
+        
+        
         _name = State(wrappedValue: currentWord.nameText)
         _translation = State(wrappedValue: currentWord.translateText)
         _meaning = State(wrappedValue: currentWord.meaningText)
         _sentence = State(wrappedValue: currentWord.sentenceText)
         _repeats = State(wrappedValue: Int(currentWord.repeats))
         _level = State(wrappedValue: Int(currentWord.level))
-        
+      
     }
     
     var body: some View {
@@ -48,25 +50,35 @@ struct WordDetailView: View {
             
             VStack{
                 HStack(spacing:0) {
-                    Text("Word Detail Edit")
+                    Text("Memorize")
                         .font(Font.custom("Montserrat-SemiBold", size: 20))
+                        .padding(.leading)
+                    Text("3")
+                        .font(Font.custom("Kristi-Regular", size: 80))
+                        .padding(.top,15)
+                        .padding(.leading, -10)
+                        .frame(height: 50)
                     Spacer()
                     
-                    Image(systemName: "minus.circle.fill")
-                        .foregroundColor(.red)
-                        .onTapGesture {
-                            isDeleted = true
-                            data.deleteData(currentWord)
-                            dismiss()
-                        }
+                    Text("Today:  1 / 8 / 12")
+                        .font(Font.custom("Montserrat-SemiBold", size: 18))
+                        .foregroundColor(Color("TextDark"))
+                        .padding(10)
+                        .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 10))
                 }
-                .padding()
                 .padding(.horizontal)
-                .foregroundColor(Color("TextDark"))
+                .foregroundColor(Color("White"))
                 
                 ZStack{
                     
                     HStack {
+                        VStack {
+                            Image(systemName: "eye")
+                            
+                            Text("\(repeats)")
+                        }
+                        .foregroundColor(Color("TextDark"))
+                        
                         TextField("Enter word...", text: $name)
                             .font(.title2)
                             .bold()
@@ -88,12 +100,12 @@ struct WordDetailView: View {
                 .background(RoundedRectangle(cornerRadius: 20)
                     .foregroundColor(Color("White")))
                 .padding(.horizontal)
+                .padding(.bottom)
+                
                 ScrollView {
-                    WordPodDetail(currentText: $translation, headline: "Translation", color1: Color("BlueMiddle"), color2: Color("BlueLight"))
-                    WordPodDetail(currentText: $meaning, headline: "Meaning", color1: Color("PurpleMiddle"), color2: Color("PurpleLight"))
-                    WordPodDetail(currentText: $sentence, headline: "Sentence", color1: Color("OrangeMiddle"), color2: Color("OrangeLight"))
-                    
-                        
+                    WordPodWorkout(currentText: $translation, headline: "Translation", color1: Color("BlueMiddle"), color2: Color("BlueLight"))
+                    WordPodWorkout(currentText: $meaning, headline: "Meaning", color1: Color("PurpleMiddle"), color2: Color("PurpleLight"))
+                    WordPodWorkout(currentText: $sentence, headline: "Sentence", color1: Color("OrangeMiddle"), color2: Color("OrangeLight"))
                 }
                 Spacer()
             }
@@ -128,18 +140,18 @@ struct WordDetailView: View {
     }
 }
 
-struct WordDetailView_Previews: PreviewProvider {
+struct WorkoutView_Preview: PreviewProvider {
     static let controller = PersistenceController.exampleWord
     static var previews: some View {
-        WordDetailView(currentWord: controller)
+        WorkoutView(currentWord: controller)
     }
 }
 
-
-struct WordPodDetail: View {
+struct WordPodWorkout: View {
     
     @State var isVisible = false
     @State var pad = 70.0
+    @State var isTextDisabled = true
     
     @Binding var currentText: String
     var headline: String
@@ -165,7 +177,7 @@ struct WordPodDetail: View {
                 ZStack{
                     HStack{
                         Spacer()
-                        //if !isVisible {
+                        if !isVisible {
                             RoundedRectangle(cornerRadius: 20)
                                 .fill(color1)
                                 .frame(width: 150, height: 150)
@@ -181,7 +193,7 @@ struct WordPodDetail: View {
                                         pad = 0.0
                                     }
                                 }
-                       // }
+                        }
                     }
                     
                     RoundedRectangle(cornerRadius: 20)
@@ -190,14 +202,35 @@ struct WordPodDetail: View {
                         .padding(.trailing, pad)
                         .overlay(alignment: .leading) {
                             if isVisible{
-                             
-                                TextField("Add...", text: $currentText, axis: .vertical)
-                                    .lineLimit(2...4)
-                                    .textFieldStyle(.roundedBorder)
-                                    .foregroundColor(Color("TextDark"))
-                                    .frame(height: 150)
-                                    .padding()
-                                 
+                                VStack(spacing: 0){
+                                    HStack{
+                                        Spacer()
+                                        Image(systemName: "square.and.pencil")
+                                            .foregroundColor(Color("TextDark"))
+                                            .onTapGesture {
+                                                isTextDisabled.toggle()
+                                            }
+                                            .padding()
+                                            //.background(.purple)
+                                    }
+                                    //.background(.red)
+                                    
+                                    TextField("Add...", text: $currentText, axis: .vertical)
+                                        .lineLimit(2...4)
+                                        //.textFieldStyle(.roundedBorder)
+                                        .foregroundColor(Color("TextDark"))
+                                        //.frame(maxHeight: 120)
+                                        .padding(5)
+                                        .background(RoundedRectangle(cornerRadius: 10).fill(isTextDisabled ? Color.clear : Color("White")))
+                                        .padding(.horizontal)
+                                        .padding(.bottom)
+                                        .disabled(isTextDisabled)
+                                        
+                                        //.background(.blue)
+                                    Spacer()
+                                }
+                                //.background(.yellow)
+                                
                             }
                         }
                 }
@@ -206,3 +239,4 @@ struct WordPodDetail: View {
         .padding(.horizontal)
     }
 }
+

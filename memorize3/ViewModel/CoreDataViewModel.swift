@@ -16,7 +16,10 @@ class CoreDataViewModel: ObservableObject {
     
     @Published var previewWords: [Word] = []
     
+    @Published var currentWord: Word?
+    
     init() {
+        
         container = NSPersistentContainer(name: "Main")
         container.loadPersistentStores { (description, error) in
             if let error = error {
@@ -41,6 +44,8 @@ class CoreDataViewModel: ObservableObject {
             print("Error fetching entities. : \(error)")
         }
         
+        currentWord = allWords[0]
+        
     }
     
     func addWord(addedWord: Word) {
@@ -55,12 +60,38 @@ class CoreDataViewModel: ObservableObject {
         saveData()
     }
     
+    func createNewWord(wordName: String) -> Word {
+        print("create new word called!")
+        let newWord = Word(context: container.viewContext)
+        newWord.name = wordName
+        newWord.translate = ""
+        newWord.meaning = ""
+        newWord.sentence = ""
+        newWord.level = 1
+        newWord.repeats = 0
+        
+        return newWord
+    }
+    
+    func deleteData(_ object: NSManagedObject) {
+        container.viewContext.delete(object)
+        print("word deleted!!")
+        
+        saveData()
+    }
+    
     func saveData() {
+        
         do {
             try container.viewContext.save()
             fetchWords()
+            print("Data Saved to Core Data !!")
         } catch let error {
             print("Error saving core data: \(error)")
         }
+    }
+    
+    func getNewWord() -> Word {
+        allWords[0]
     }
 }

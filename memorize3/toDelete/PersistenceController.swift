@@ -27,6 +27,38 @@ struct PersistenceController {
         return result
     }()
     
+    static var exampleWords: [Word] {
+        let result = PersistenceController(inMemory: true)
+        let viewContext = result.container.viewContext
+        var words : [Word] = []
+        for x in 0..<10 {
+            let newWord = Word(context: viewContext)
+            newWord.name = "test word \(x)"
+            newWord.translate = "new word translate"
+            newWord.meaning = "new word meaning"
+            newWord.sentence = "new word sentence"
+            newWord.level = 3
+            newWord.repeats = 0
+            words.append(newWord)
+        }
+        
+        return words
+    }
+    
+    static var exampleWord: Word {
+        let result = PersistenceController(inMemory: true)
+        let viewContext = result.container.viewContext
+        let newWord = Word(context: viewContext)
+        newWord.name = "test word 1"
+        newWord.translate = "new word translate"
+        newWord.meaning = "new word meaning"
+        newWord.sentence = "new word sentence"
+        newWord.level = 3
+        newWord.repeats = 0
+        
+        return newWord
+    }
+    
     let container: NSPersistentContainer
     
     init(inMemory: Bool = false) {
